@@ -19,6 +19,7 @@ android.permissions = CAMERA
 # Configuración NDK / API
 android.api = 33
 android.minapi = 21
+android.sdk_build_tools = 33.0.2
 android.ndk = 25b
 android.ndk_api = 21
 android.archs = arm64-v8a
