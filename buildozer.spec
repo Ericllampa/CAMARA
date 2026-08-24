@@ -1,8 +1,7 @@
 [app]
 
-# (main.py es el archivo de entrada)
-title = Mi App Camara
-package.name = miappcamara
+title = Mi App Procesamiento
+package.name = miappprocesamiento
 package.domain = org.test
 
 source.dir = .
@@ -10,22 +9,15 @@ source.include_exts = py,png,jpg,kv,atlas
 
 version = 0.1
 
-# Requerimientos para OpenCV
-requirements = python3,kivy,numpy,opencv
+# Requerimientos livianos (sin NDK pesado de C++)
+requirements = python3,kivy,pillow
 
-# Permisos requeridos
-android.permissions = CAMERA
+# Permisos requeridos para capturar imagen o abrir archivos
+android.permissions = CAMERA,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-# SDK, NDK y Build-Tools
+# Configuración estándar de Android
 android.api = 33
 android.minapi = 21
-android.ndk = 25b
-android.ndk_api = 21
-android.sdk_build_tools = 33.0.2
-
-# Aceptar licencias de Android automáticamente
-android.accept_sdk_license = True
-
 android.archs = arm64-v8a
 
 [buildozer]
