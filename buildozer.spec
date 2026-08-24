@@ -9,19 +9,20 @@ source.include_exts = py,png,jpg,kv,atlas
 
 version = 0.1
 
-# Requerimientos livianos (sin NDK pesado de C++)
-requirements = python3,kivy,pillow
+[app]
 
-# Permisos requeridos para capturar imagen o abrir archivos
-android.permissions = CAMERA,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
+# ... (resto de tus configuraciones)
 
+# Forzar hostpython3 para que Pillow/Cython puedan compilar C
+requirements = python3,hostpython3,kivy,pillow
 
-# Fijar API y Build Tools estables
+# OBLIGATORIO: Forzar NDK 25b y API 33
 android.api = 33
 android.minapi = 21
-android.sdk_build_tools = 33.0.2
+android.ndk = 25b
+android.ndk_api = 21
 
-# Aceptar licencias del SDK automáticamente
+# Aceptar licencias automáticamente
 android.accept_sdk_license = True
 
 android.archs = arm64-v8a
