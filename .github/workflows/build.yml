@@ -11,9 +11,9 @@ jobs:
 
     steps:
     - name: Checkout del código
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
-    - name: Instalar dependencias del sistema operativo (C++ & Pillow)
+    - name: Instalar dependencias del sistema
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential ccache git python3-pip \
@@ -21,21 +21,26 @@ jobs:
           libjpeg-dev libpng-dev \
           libsdl2-dev libsdl2-image-dev libsdl2-mixer-dev libsdl2-ttf-dev
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Configurar Python
+      uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
-    - name: Instalar Buildozer y Cython compatible
+    - name: Instalar Buildozer y Cython
       run: |
         pip install --upgrade pip
         pip install "cython<3.0.0" buildozer
 
-    - name: Compilar APK con Buildozer
+    - name: Compilar APK
+      env:
+        # Anular los NDKs del sistema runner
+        ANDROID_NDK_HOME: ''
+        ANDROID_NDK_ROOT: ''
+        ANDROID_NDK: ''
       run: |
-        yes | buildozer -v android debug
+        buildozer -v android debug
 
-    - name: Subir APK como artefacto
+    - name: Subir Artefacto APK
       uses: actions/upload-artifact@v4
       with:
         name: app-debug
