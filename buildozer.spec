@@ -9,10 +9,6 @@ source.include_exts = py,png,jpg,kv,atlas
 
 version = 0.1
 
-[app]
-
-# ... (resto de tus configuraciones)
-
 # Forzar hostpython3 para que Pillow/Cython puedan compilar C
 requirements = python3,hostpython3,kivy,pillow
 
