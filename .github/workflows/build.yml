@@ -13,7 +13,7 @@ jobs:
     - name: Checkout del código
       uses: actions/checkout@v3
 
-    - name: Instalar dependencias del sistema operativo para OpenCV
+    - name: Instalar dependencias del sistema
       run: |
         sudo apt-get update
         sudo apt-get install -y build-essential ccache git python3-pip \
@@ -28,7 +28,7 @@ jobs:
     - name: Instalar Buildozer y Cython
       run: |
         pip install --upgrade pip
-        pip install buildozer cython
+        pip install "cython<3.0.0" buildozer
 
     - name: Compilar APK con Buildozer
       run: |
