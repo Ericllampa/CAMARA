@@ -15,8 +15,6 @@ requirements = python3,kivy,pillow
 # Permisos requeridos para capturar imagen o abrir archivos
 android.permissions = CAMERA,READ_EXTERNAL_STORAGE,WRITE_EXTERNAL_STORAGE
 
-[app]
-# ... (resto de tu archivo)
 
 # Fijar API y Build Tools estables
 android.api = 33
