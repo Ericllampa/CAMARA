@@ -16,12 +16,16 @@ requirements = python3,kivy,numpy,opencv
 # Permisos requeridos
 android.permissions = CAMERA
 
-# Configuración NDK / API
+# SDK, NDK y Build-Tools
 android.api = 33
 android.minapi = 21
-android.sdk_build_tools = 33.0.2
 android.ndk = 25b
 android.ndk_api = 21
+android.sdk_build_tools = 33.0.2
+
+# Aceptar licencias de Android automáticamente
+android.accept_sdk_license = True
+
 android.archs = arm64-v8a
 
 [buildozer]
