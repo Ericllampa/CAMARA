@@ -1,27 +1,17 @@
 [app]
-
-# (1) Título de tu aplicación
 title = MiAppCamara
-
-# (2) Nombre del paquete en formato alfanumérico (sin guiones ni símbolos)
 package.name = miappcamara
-
-# (3) Dominio de la organización (identificador único)
 package.domain = org.ejemplo
-
-# (4) Directorio del código fuente (. indica la carpeta raíz)
 source.dir = .
-
-# Archivos a incluir en el APK
 source.include_exts = py,png,jpg,kv,atlas
-
-# (5) Versión de la aplicación
 version = 0.1
 
-# Requerimientos de Python y librerías C
+# Requerimientos (asegúrate de incluir python3)
 requirements = python3,kivy,pillow
 
-# Arquitectura y compatibilidad Android
+# Forzar la rama estable de python-for-android
+p4a.branch = master
+
 android.api = 33
 android.minapi = 21
 android.ndk = 25b
