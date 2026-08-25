@@ -19,10 +19,10 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Configurar Python 3.10
+    - name: Configurar Python 3.11
       uses: actions/setup-python@v5
       with:
-        python-version: '3.10'
+        python-version: '3.11'
 
     - name: Instalar dependencias del sistema operativo
       run: |
@@ -49,10 +49,10 @@ jobs:
           zip \
           unzip
 
-    - name: Instalar Buildozer y Cython
+    - name: Instalar Buildozer y Cython compatibles
       run: |
         pip install --upgrade pip setuptools wheel
-        pip install "cython<3.0.0" buildozer
+        pip install "cython<3.0.0" "buildozer==1.5.0" "python-for-android==2024.1.21"
 
     - name: Compilar APK
       env:
